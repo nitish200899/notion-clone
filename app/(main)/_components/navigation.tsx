@@ -1,13 +1,16 @@
 "use client";
 
 import { cn } from "@/lib/utils";
-import { ChevronLeft, MenuIcon } from "lucide-react";
+import { ChevronLeft, MenuIcon, PlusCircle, Search, Settings } from "lucide-react";
 import { usePathname } from "next/navigation";
 import { useRef,ElementRef, useState, useEffect } from "react";
 import { useMediaQuery } from "usehooks-ts";
 import { UserItem } from "./user-item";
-import { useQuery } from "convex/react";
+import { useMutation } from "convex/react";
 import { api } from "@/convex/_generated/api";
+import { Item } from "./item";
+import { toast } from "sonner";
+import DocumentList from "./document-list";
 
 const Navigation = () => {
     const pathName = usePathname()
@@ -20,7 +23,7 @@ const Navigation = () => {
     const [isResetting, setIsResetting] = useState(false)
     const [isCollapsed, setIsCollapsed] = useState(isMobile)
 
-    const documents = useQuery(api.documents.get)
+    const create = useMutation(api.documents.create)
 
     useEffect(()=>{
       if(isMobile){
@@ -89,6 +92,16 @@ const Navigation = () => {
         setTimeout(()=>setIsResetting(false),300)
       }
     }
+
+    const handleCreate = () => {
+      const promise = create({title : "Untitled"})
+
+      toast.promise(promise,{
+        loading : "Creating a new note...",
+        success : "New note created",
+        error : "Error while creating a note"
+      })
+    }
   return (
     <>
     <aside 
@@ -109,15 +122,12 @@ const Navigation = () => {
       </div>
       <div>
         <UserItem/>
+        <Item onClick={()=>{}} label="Search" isSearch={true} icon={Search}/>
+        <Item onClick={()=>{}} label="Settings" icon={Settings}/>
+        <Item onClick={handleCreate} label="New Page" icon={PlusCircle}/>
       </div>
       <div className="mt-4">
-        {
-          documents?.map((document)=>
-          <p key={document._id}>
-            {document.title}
-          </p>
-          )
-        }
+          <DocumentList/>
       </div>
       <div 
         onMouseDown={handleMouseDown}
