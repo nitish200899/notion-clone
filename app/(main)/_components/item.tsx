@@ -14,7 +14,7 @@ import { useUser } from "@clerk/clerk-react"
 interface ItemProps {
     id?: Id<'documents'>,
     label : string,
-    onClick : () => void,
+    onClick?: () => void,
     icon : LucideIcon,
     documentIcon?: string,
     active?: boolean
