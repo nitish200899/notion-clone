@@ -34,6 +34,8 @@ export const Menu = ({documentId} : MenuProps) => {
             success : "Document moved to trash",
             error : "Error while moving a document to trash"
         })
+
+        router.push("/documents")
     }
 
     return (

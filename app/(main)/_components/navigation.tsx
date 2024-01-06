@@ -4,7 +4,7 @@ import { cn } from "@/lib/utils";
 import { ChevronLeft, MenuIcon, Plus, PlusCircle, Search, Settings, Trash } from "lucide-react";
 import { useRef,ElementRef, useState, useEffect } from "react";
 import { Popover,PopoverContent,PopoverTrigger } from "@/components/ui/popover";
-import { useParams, usePathname } from "next/navigation";
+import { useParams, usePathname,useRouter } from "next/navigation";
 import DocumentList from "./document-list";
 import { useMediaQuery } from "usehooks-ts";
 import { UserItem } from "./user-item";
@@ -19,6 +19,7 @@ import Navbar from "./navbar";
 
 const Navigation = () => {
     const params = useParams()
+    const router = useRouter()
     const search = useSearch()
     const settings = useSettings()
     const pathName = usePathname()
@@ -103,6 +104,7 @@ const Navigation = () => {
 
     const handleCreate = () => {
       const promise = create({title : "Untitled"})
+        .then((documentId)=>router.push(`/documents/${documentId}`))
 
       toast.promise(promise,{
         loading : "Creating a new note...",
