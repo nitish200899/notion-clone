@@ -1,36 +1,25 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Jotion (Notion Replica)
+
+A powerful Notion replica, accessible online at [Jotion](https://notion-replica.vercel.app/)
+. This application provides a flexible and collaborative workspace for organizing your thoughts, tasks, and projects. It closely mirrors the key features of Notion while offering a customizable and open-source alternative.
+
+## Features
+
+**Rich Content** : Create and edit notes, documents, and databases with support for various media types, including text, images, and embedded content.
+
+**Customizable Blocks**: Build your workspace with customizable blocks that suit your workflow. Tailor your pages to include to-do lists, tables, calendars, and more.
+
+**Markdown Support** : Write in markdown for a straightforward and familiar editing experience. Convert between rich text and markdown effortlessly.
+
+**Cross-Platform** : Access your content from any device. The responsive design ensures a consistent experience across desktop, tablet, and mobile platforms.
+
+**Publish and Share** :App allows you to publish your notes, making them accessible to others for reading without the ability to edit. This feature is perfect for sharing important information, announcements, or documentation with a wider audience.
 
 ## Getting Started
+To explore the Notion Replica, simply visit [Jotion](https://notion-replica.vercel.app/).
 
-First, run the development server:
+## Contributing
+We welcome contributions from the community! If you'd like to contribute to the project, please read our contribution guidelines for more information.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Acknowledgments
+Special thanks to the creators of Notion for inspiring this project.
