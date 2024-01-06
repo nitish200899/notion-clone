@@ -42,7 +42,7 @@ export const Banner = ({documentId} : BannerProps) => {
     return (
         <div className="w-full bg-rose-500 text-center text-sm p-2 text-white flex items-center gap-x-2 justify-center">
            <p>
-            This page os in trash.
+            This page is in trash.
            </p>
             <Button 
                 onClick={onRestore}
